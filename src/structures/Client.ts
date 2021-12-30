@@ -1,14 +1,22 @@
 import fs from 'fs';
-import { Client, ClientOptions } from 'eris';
-import { Command } from '../typings';
+import {
+    Client,
+    ClientOptions
+} from 'eris';
+import {
+    Command
+} from '../typings';
 import botDB from "../models/botDB"
 import guildDB from '../models/guildDB';
 import cmds from '../models/cmds';
-import { blue, red, green, yellow } from 'chalk';
+import {
+    blue,
+    green
+} from 'chalk';
 import Embed from "./Embed"
-console.log("abri a client structures file")
+
 export default class DaniClient extends Client {
-    commands: Array<Command>;
+    commands: Array < Command > ;
     db: {
         bot: typeof botDB;
         guild: typeof guildDB;
@@ -36,7 +44,7 @@ export default class DaniClient extends Client {
         }
         this.embed = Embed;
     }
-    connect(): Promise<void> {
+    connect(): Promise < void > {
         return super.connect();
     }
     loadCommands(): void {
@@ -56,7 +64,7 @@ export default class DaniClient extends Client {
     loadEvents(): void {
         console.log("usei a func load event")
         fs.readdirSync('./src/events').filter(f => f.endsWith('.ts')).forEach(f => {
-            const DaniEvent = new (require(`../events/${f}`).default)(this);
+            const DaniEvent = new(require(`../events/${f}`).default)(this);
             const eventName = f.split('.')[0];
 
             if (eventName === 'ready') {

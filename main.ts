@@ -1,9 +1,14 @@
 import dotenv from 'dotenv';
-import DaniClient  from "./src/structures/Client"
+import DaniClient from "./src/structures/Client"
 import database from "mongoose"
-import { green, yellow } from 'chalk';
+import {
+    green,
+    yellow
+} from 'chalk';
 import CommandContext from './src/structures/CommandContext';
-import { Message } from 'eris';
+import {
+    Message
+} from 'eris';
 
 dotenv.config()
 const client = new DaniClient()

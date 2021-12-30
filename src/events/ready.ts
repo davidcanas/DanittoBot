@@ -1,4 +1,7 @@
-import { green, yellow } from 'chalk';
+import {
+    green,
+    yellow
+} from 'chalk';
 import Client from '../structures/Client';
 
 export default class ready {
@@ -18,7 +21,7 @@ export default class ready {
             `😃 Já Conheço ${this.client.users.size} usuários ! `,
             `🎃 Feliz Halloween !`
         ]
-      let i = 0;
+        let i = 0;
         setInterval(async () => {
             this.client.editStatus('online', {
                 name: `${activities[i++ % activities.length]}`,

@@ -10,17 +10,17 @@ export default class Botinfo extends Command {
             description: "Informações do Danitto",
             category: "Info",
             aliases: ['ajuda'],
-            devOnly: false
+
         });
     }
 
-    async execute(ctx: CommandContext): Promise<void> {
+    async execute(ctx: CommandContext): Promise < void > {
         try {
             const cpuValor = await os1.cpu.usage();
             let cmd = this.client.commands.length
             let serv = this.client.guilds.size
             let nome = `${this.client.user.username}#${this.client.user.discriminator}`
-            let dono = this.client.users.get("791347446298312724")
+            let dono = this.client.users.get("733963304610824252")
 
             let embed = new this.client.embed()
                 .setTitle("<:danitto:883308546983362561> Informações do Danitto")
@@ -34,9 +34,14 @@ export default class Botinfo extends Command {
                 .addField("<:cpu:864523602145706024> CPU", cpuValor + "%")
                 .addField("<:ram1:864523884442550333> RAM", `${(process.memoryUsage().rss / 1024 / 1024).toFixed(0)}MB`)
                 .setColor("GREEN")
-            ctx.sendMessage({ embeds: [embed] });
+            ctx.sendMessage({
+                embeds: [embed]
+            });
         } catch (err) {
-            ctx.sendMessage({ content: `Ups... ocorreu um erro inesperado ao tentar executar este comando: ${err}`, flags: 1 << 6 })
+            ctx.sendMessage({
+                content: `Ups... ocorreu um erro inesperado ao tentar executar este comando: ${err}`,
+                flags: 1 << 6
+            })
         }
 
     }

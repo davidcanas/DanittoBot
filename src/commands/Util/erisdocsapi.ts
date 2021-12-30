@@ -9,11 +9,11 @@ export default class erisdocsapi extends Command {
             description: "Vê as docs do eris",
             category: "Util",
             aliases: ['erisdocs', "eris", "docseris"],
-            devOnly: false
+
         });
     }
 
-    async execute(ctx: CommandContext): Promise<void> {
+    async execute(ctx: CommandContext): Promise < void > {
 
 
     }

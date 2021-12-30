@@ -9,15 +9,18 @@ export default class Eval extends Command {
             description: "",
             category: "Owner",
             aliases: ['daniconfig', 'configdani'],
-            devOnly: true
+
         });
     }
 
-    async execute(ctx: CommandContext): Promise<void> {
+    async execute(ctx: CommandContext): Promise < void > {
         if (ctx.author.id !== '733963304610824252') return
         let args = ctx.args[0]
         if (!args) {
-            ctx.sendMessage({ content: "Estás perdido? Eu dou te uma ajudinha : `cmdupdate, prefix, shutdown` espero ter te ajudado :)", flags: 1 << 6 })
+            ctx.sendMessage({
+                content: "Estás perdido? Eu dou te uma ajudinha : `cmdupdate, prefix, shutdown` espero ter te ajudado :)",
+                flags: 1 << 6
+            })
             return;
         }
         if (args === "cmdupdate") {
@@ -38,7 +41,9 @@ export default class Eval extends Command {
         }
         if (args === "prefix") {
             let model = this.client.db.guild
-            let update = await model.findOne({ guildID: ctx.guild.id })
+            let update = await model.findOne({
+                guildID: ctx.guild.id
+            })
 
             if (update) {
                 update.Settings.prefix = ctx.args[1]
@@ -47,8 +52,11 @@ export default class Eval extends Command {
             }
         }
         if (args === "shutdown" || args === "desligar") {
-            ctx.sendMessage({ content: "Ok, estou desligando em 7 segundos !", flags: 1 << 6 })
-            setTimeout(function () {
+            ctx.sendMessage({
+                content: "Ok, estou desligando em 7 segundos !",
+                flags: 1 << 6
+            })
+            setTimeout(function() {
                 process.exit(1)
             }, 7000);
         }
@@ -59,26 +67,30 @@ export default class Eval extends Command {
                 return;
             }
             if (op === "on") {
-                let man = await this.client.db.bot.findOne({botID: this.client.user.id})
-               if (man) {
-                man.manu = true
-                man.save()
-                ctx.sendMessage("Ok ativei o modo de manutenção")
+                let man = await this.client.db.bot.findOne({
+                    botID: this.client.user.id
+                })
+                if (man) {
+                    man.manu = true
+                    man.save()
+                    ctx.sendMessage("Ok ativei o modo de manutenção")
 
-               } else {
-                   ctx.sendMessage("Ocorreu um erro a encontrar o modelo...")
-               }
+                } else {
+                    ctx.sendMessage("Ocorreu um erro a encontrar o modelo...")
+                }
             }
             if (op === "off") {
-                let man = await this.client.db.bot.findOne({botID: this.client.user.id})
-               if (man) {
-                man.manu = false
-                man.save()
-                ctx.sendMessage("Ok desativei o modo de manutenção")
-                
-               } else {
-                   ctx.sendMessage("Ocorreu um erro a encontrar o modelo...")
-               }
+                let man = await this.client.db.bot.findOne({
+                    botID: this.client.user.id
+                })
+                if (man) {
+                    man.manu = false
+                    man.save()
+                    ctx.sendMessage("Ok desativei o modo de manutenção")
+
+                } else {
+                    ctx.sendMessage("Ocorreu um erro a encontrar o modelo...")
+                }
             }
         }
 
