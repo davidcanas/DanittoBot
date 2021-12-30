@@ -17,12 +17,10 @@
         "@types/node": "^14.17.14",
         "chalk": "^4.1.2",
         "dotenv": "^10.0.0",
-        "erela.js": "git+https://github.com/davidffa/erela.js.git#build-mod",
         "eris": "git+https://github.com/DonovanDMC/eris.git#everything",
-        "eris-components": "^1.0.1",
         "fs": "^0.0.1-security",
-        "js-beautify": "^1.14.0",
         "mongoose": "^6.0.4",
+        "node-fetch": "2.6.1",
         "node-os-utils": "^1.3.5",
         "os": "^0.1.2",
         "ts-node-dev": "^1.1.8",
@@ -35,5 +33,10 @@
     "bugs": {
         "url": "https://github.com/DanittoBot/DanittoTS/issues"
     },
-    "homepage": "https://github.com/DanittoBot/DanittoTS#readme"
+    "homepage": "https://github.com/DanittoBot/DanittoTS#readme",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.8.1",
+        "@typescript-eslint/parser": "^5.8.1",
+        "eslint": "^8.5.0"
+    }
 }

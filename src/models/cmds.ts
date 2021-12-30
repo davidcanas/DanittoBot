@@ -1,8 +1,8 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model, Document } from "mongoose"
 
 interface cmds extends Document {
   name: string;
-  description: String;
+  description: string;
   category: string;
   aliases: Array<string>
 
@@ -10,22 +10,22 @@ interface cmds extends Document {
 
 const cmds: Schema = new Schema({
 
-  name: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String
-  },
-  category: {
-    type: String
+	name: {
+		type: String,
+		required: true
+	},
+	description: {
+		type: String
+	},
+	category: {
+		type: String
 
-  },
-  aliases: {
-    type: Array
-  }
+	},
+	aliases: {
+		type: Array
+	}
 }, {
-  versionKey: false
-});
+	versionKey: false
+})
 
-export default model<cmds>("cmds", cmds);
+export default model<cmds>("cmds", cmds)

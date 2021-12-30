@@ -1,20 +1,20 @@
-import Client from './Client'
+import Client from "./Client"
 import {
-    CommandSettings
-} from '../typings'
+	CommandSettings
+} from "../typings"
 export default class Command implements CommandSettings {
-    client: Client;
-    description: string;
-    name: string;
-    aliases ? : Array < string > ;
-    category: "Owner" | "Util" | "Info" | "Fun"
+	client: Client
+	description: string
+	name: string
+	aliases ? : Array < string > 
+	category: "Owner" | "Util" | "Info" | "Fun"
 
-    constructor(client: Client, options: CommandSettings) {
-        this.client = client;
-        this.name = options.name;
-        this.description = options.description;
-        this.aliases = options.aliases;
-        this.category = options.category
+	constructor(client: Client, options: CommandSettings) {
+		this.client = client
+		this.name = options.name
+		this.description = options.description
+		this.aliases = options.aliases
+		this.category = options.category
 
-    }
+	}
 }

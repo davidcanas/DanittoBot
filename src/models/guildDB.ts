@@ -1,4 +1,4 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model, Document } from "mongoose"
 
 interface guildDB extends Document {
     guildID: string;
@@ -9,24 +9,24 @@ interface guildDB extends Document {
 }
 
 const guildDB: Schema = new Schema({
-    guildID: {
-        type: String,
-        required: true
-    },
+	guildID: {
+		type: String,
+		required: true
+	},
 
-    Settings: {
-        lang: {
-            type: String,
-            default: "pt"
-        },
-        prefix: {
-            type: String
-        },
+	Settings: {
+		lang: {
+			type: String,
+			default: "pt"
+		},
+		prefix: {
+			type: String
+		},
 
-    }
+	}
 
 }, {
-    versionKey: false
-});
+	versionKey: false
+})
 
-export default model<guildDB>("Guild", guildDB);
+export default model<guildDB>("Guild", guildDB)

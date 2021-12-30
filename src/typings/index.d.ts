@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
-    Message
-} from "eris";
+	Message
+} from "eris"
+
 interface CommandSettings {
     name: string;
     description: string;
     aliases ? : Array < string > ;
     usage ? : string;
-    category: 'Owner' | 'Util' | 'Info' | 'Fun';
+    category: "Owner" | "Util" | "Info" | "Fun";
 
 }
 
