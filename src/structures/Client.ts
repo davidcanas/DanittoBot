@@ -55,14 +55,14 @@ export default class DaniClient extends Client {
 
                 const DaniCommand = require(`../commands/${folder}/${file}`).default;
                 this.commands.push(new DaniCommand(this));
-                console.log(`A pasta ${blue(folder)} foi iniciada com ${green("sucesso")}`)
+
 
             });
 
         });
     }
     loadEvents(): void {
-        console.log("usei a func load event")
+
         fs.readdirSync('./src/events').filter(f => f.endsWith('.ts')).forEach(f => {
             const DaniEvent = new(require(`../events/${f}`).default)(this);
             const eventName = f.split('.')[0];

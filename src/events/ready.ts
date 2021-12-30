@@ -12,7 +12,6 @@ export default class ready {
     }
 
     async run() {
-        console.log("client pronto!")
         console.log(`O ${yellow("client")} foi conectado com ${green("sucesso")}`);
         let activities = [
             `Utilize d/help para obter ajuda `,
