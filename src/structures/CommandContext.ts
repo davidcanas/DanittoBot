@@ -13,8 +13,8 @@ import {
 } from "eris"
 
 export enum Type {
-    MESSAGE,
-    INTERACTION
+	MESSAGE,
+	INTERACTION
 }
 
 export default class CommandContext {
@@ -54,7 +54,7 @@ export default class CommandContext {
 			} else if (interaction.data.type === 2) {
 				this.args.push(interaction.data.target_id!)
 			} else if (interaction.data.type === 3) {
-				this.args = interaction.data.resolved!.messages!.get(interaction.data.target_id!) !.content.split(/ +/)
+				this.args = interaction.data.resolved!.messages!.get(interaction.data.target_id!)!.content.split(/ +/)
 			}
 		}
 	}
@@ -71,13 +71,13 @@ export default class CommandContext {
 	}
 
 	get guild(): Guild {
-		return this.client.guilds.get(this.interactionOrMessage.guildID!) !
+		return this.client.guilds.get(this.interactionOrMessage.guildID!)!
 	}
 
 	get channel(): TextableChannel {
 		return this.interactionOrMessage.channel
 	}
-	async sendMessage(content: MessageContent, fetchReply = false): Promise < Message < TextableChannel > | void > {
+	async sendMessage(content: MessageContent, fetchReply = false): Promise<Message<TextableChannel> | void> {
 		if (this.interactionOrMessage instanceof Message) {
 			return this.channel.createMessage(content)
 		} else {

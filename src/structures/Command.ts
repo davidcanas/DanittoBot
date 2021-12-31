@@ -6,7 +6,7 @@ export default class Command implements CommandSettings {
 	client: Client
 	description: string
 	name: string
-	aliases ? : Array < string > 
+	aliases?: Array<string>
 	category: "Owner" | "Util" | "Info" | "Fun"
 
 	constructor(client: Client, options: CommandSettings) {

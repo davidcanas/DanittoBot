@@ -1,3 +1,4 @@
+// Thank you d4rkb
 import {
 	EmbedAuthorOptions,
 	EmbedField,
@@ -6,16 +7,16 @@ import {
 } from "eris"
 
 export default class Embed {
-	author ? : EmbedAuthorOptions
-	color ? : number
-	description ? : string
-	fields ? : EmbedField[]
-	footer ? : EmbedFooterOptions
-	image ? : EmbedImageOptions
-	thumbnail ? : EmbedImageOptions
-	timestamp ? : Date | string
-	title ? : string
-	url ? : string
+	author?: EmbedAuthorOptions
+	color?: number
+	description?: string
+	fields?: EmbedField[]
+	footer?: EmbedFooterOptions
+	image?: EmbedImageOptions
+	thumbnail?: EmbedImageOptions
+	timestamp?: Date | string
+	title?: string
+	url?: string
 
 	addField(name: string, value: string, inline = false): this {
 		if (!this.fields) this.fields = []
@@ -27,7 +28,7 @@ export default class Embed {
 		return this
 	}
 
-	setAuthor(name: string, iconURL ? : string, url ? : string): this {
+	setAuthor(name: string, iconURL?: string, url?: string): this {
 		this.author = {
 			name,
 			icon_url: iconURL,
@@ -52,7 +53,7 @@ export default class Embed {
 		return this
 	}
 
-	setFooter(text: string, iconURL ? : string): this {
+	setFooter(text: string, iconURL?: string): this {
 		this.footer = {
 			text,
 			icon_url: iconURL
@@ -75,7 +76,7 @@ export default class Embed {
 		return this
 	}
 
-	setTimestamp(timestamp ? : string): this {
+	setTimestamp(timestamp?: string): this {
 		if (!timestamp) {
 			this.timestamp = new Date()
 		} else {

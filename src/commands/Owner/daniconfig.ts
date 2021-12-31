@@ -13,7 +13,7 @@ export default class Eval extends Command {
 		})
 	}
 
-	async execute(ctx: CommandContext): Promise < void > {
+	async execute(ctx: CommandContext): Promise<void> {
 		if (ctx.author.id !== "733963304610824252") return
 		const args = ctx.args[0]
 		if (!args) {
@@ -56,7 +56,7 @@ export default class Eval extends Command {
 				content: "Ok, estou desligando em 7 segundos !",
 				flags: 1 << 6
 			})
-			setTimeout(function() {
+			setTimeout(function () {
 				process.exit(1)
 			}, 7000)
 		}

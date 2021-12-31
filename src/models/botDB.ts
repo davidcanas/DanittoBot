@@ -1,9 +1,9 @@
 import { Schema, model, Document } from "mongoose"
 
 interface botDB extends Document {
-  botID: string;
-  commands: number;
-  manu: boolean;
+	botID: string;
+	commands: number;
+	manu: boolean;
 
 }
 

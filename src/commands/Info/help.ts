@@ -13,7 +13,7 @@ export default class Help extends Command {
 		})
 	}
 
-	async execute(ctx: CommandContext): Promise < void > {
+	async execute(ctx: CommandContext): Promise<void> {
 
 
 		const help = new this.client.embed()

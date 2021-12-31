@@ -13,10 +13,10 @@ import Embed from "./Embed"
 export default class DaniClient extends Client {
 	commands: Array<Command>
 	db: {
-        bot: typeof botDB;
-        guild: typeof guildDB;
-        cmds: typeof cmds
-    }
+		bot: typeof botDB;
+		guild: typeof guildDB;
+		cmds: typeof cmds
+	}
 	embed: typeof Embed
 	constructor() {
 

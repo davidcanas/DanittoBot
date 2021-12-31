@@ -1,10 +1,10 @@
 import { Schema, model, Document } from "mongoose"
 
 interface cmds extends Document {
-  name: string;
-  description: string;
-  category: string;
-  aliases: Array<string>
+	name: string;
+	description: string;
+	category: string;
+	aliases: Array<string>
 
 }
 

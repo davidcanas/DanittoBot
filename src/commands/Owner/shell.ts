@@ -19,7 +19,7 @@ export default class Eval extends Command {
 		})
 	}
 
-	async execute(ctx: CommandContext): Promise < void > {
+	async execute(ctx: CommandContext): Promise<void> {
 		if (ctx.author.id !== "733963304610824252" && ctx.author.id !== "852650555254767676") {
 			ctx.sendMessage("Apenas meu criador")
 			return

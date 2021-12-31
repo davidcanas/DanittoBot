@@ -1,10 +1,7 @@
 import dotenv from "dotenv"
 import DaniClient from "./src/structures/Client"
 import database from "mongoose"
-import {
-	green,
-	yellow
-} from "chalk"
+import { green, yellow } from "chalk"
 
 dotenv.config()
 const client = new DaniClient()

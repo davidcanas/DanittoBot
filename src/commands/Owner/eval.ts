@@ -13,7 +13,7 @@ export default class Eval extends Command {
 		})
 	}
 
-	async execute(ctx: CommandContext): Promise < void > {
+	async execute(ctx: CommandContext): Promise<void> {
 
 		try {
 

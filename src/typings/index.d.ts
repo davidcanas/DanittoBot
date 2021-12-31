@@ -1,13 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import {
-	Message
-} from "eris"
+
+import { Message } from "eris"
 
 interface CommandSettings {
     name: string;
     description: string;
-    aliases ? : Array < string > ;
-    usage ? : string;
+    aliases?: Array<string>;
+    usage?: string;
     category: "Owner" | "Util" | "Info" | "Fun";
 
 }
@@ -20,13 +18,13 @@ interface InteractionOptions {
     name: string;
     value: string;
     type: number;
-    options ? : InteractionOptions[];
+    options?: InteractionOptions[];
 }
 
 interface InteractionResolved {
-    messages: Record < string, {
+    messages: Record<string, {
         content: string // only need content :>
-    } > ;
+    }>;
     // users & members: <- don't need for now
 }
 
@@ -34,9 +32,9 @@ interface InteractionData {
     id: string;
     name: string;
     type: number;
-    options ? : InteractionOptions[];
-    resolved ? : InteractionResolved;
-    target_id ? : string;
+    options?: InteractionOptions[];
+    resolved?: InteractionResolved;
+    target_id?: string;
 }
 
 interface InteractionPacket {
@@ -59,16 +57,16 @@ interface InteractionPacket {
 }
 
 interface InteractionApplicationCommandCallbackData {
-    tts ? : boolean;
-    content ? : string;
-    embeds ? : EmbedOptions[];
-    allowed_mentions ? : AllowedMentions;
-    flags ? : number;
+    tts?: boolean;
+    content?: string;
+    embeds?: EmbedOptions[];
+    allowed_mentions?: AllowedMentions;
+    flags?: number;
 }
 
 interface IEditInteractionData {
     [key: string]: string;
-    content ? : string;
-    embeds ? : EmbedOptions[];
-    file ? : MessageFile;
+    content?: string;
+    embeds?: EmbedOptions[];
+    file?: MessageFile;
 }

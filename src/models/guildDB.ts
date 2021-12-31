@@ -1,11 +1,11 @@
 import { Schema, model, Document } from "mongoose"
 
 interface guildDB extends Document {
-    guildID: string;
-    Settings: {
-        lang: string;
-        prefix: string
-    }
+	guildID: string;
+	Settings: {
+		lang: string;
+		prefix: string
+	}
 }
 
 const guildDB: Schema = new Schema({
