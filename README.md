@@ -1,7 +1,7 @@
 # Danitto
 Um bot multifuncional em desenvolvimento!
 
-Nota: Coisas incompletas são normais por agora, o bot está em desenvolvimento, ao longo dos dias vou desenvolvendo
 
+P.S: Não aconselho verem o código , pode causar traumas ...
 
 Agradecimentos especiais a [davidffa](https://github.com/davidffa)

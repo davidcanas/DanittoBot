@@ -9,7 +9,7 @@ export default class Eval extends Command {
 			description: "a",
 			category: "Owner",
 			aliases: ["execute"],
-
+			options: []
 		})
 	}
 

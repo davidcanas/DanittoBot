@@ -9,6 +9,7 @@ export default class Botinfo extends Command {
 			description: "Informações do Danitto",
 			category: "Info",
 			aliases: ["ajuda"],
+			options: []
 
 		})
 	}

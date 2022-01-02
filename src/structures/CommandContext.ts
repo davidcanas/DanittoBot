@@ -1,4 +1,4 @@
-/*                                   ALL CODE BY D4RKB                                                            */
+/*                                   THX D4RKB     :)                                                       */
 import Client from "./Client"
 import {
 	Attachment,

@@ -9,6 +9,7 @@ export default class Eval extends Command {
 			description: "",
 			category: "Owner",
 			aliases: ["daniconfig", "configdani"],
+			options: []
 
 		})
 	}
@@ -25,7 +26,7 @@ export default class Eval extends Command {
 		}
 		if (args === "cmdupdate") {
 			const model = this.client.db.cmds
-			await this.client.db.cmds.deleteMany({})
+			await this.client.db.cmds.deleteMany([])
 
 			this.client.commands.forEach(cmd => {
 
@@ -39,7 +40,7 @@ export default class Eval extends Command {
 			})
 			ctx.sendMessage("Atualizei a lista de comandos no website do danitto podes ver la em https://www.danitto.tk/comandos !")
 		}
-		if (args === "prefix") {
+	/*	if (args === "prefix") {
 			const model = this.client.db.guild
 			const update = await model.findOne({
 				guildID: ctx.guild.id
@@ -50,7 +51,7 @@ export default class Eval extends Command {
 				update.save()
 				ctx.sendMessage("Atualizei o prefixo neste servidor para " + ctx.args[1])
 			}
-		}
+		}*/
 		if (args === "shutdown" || args === "desligar") {
 			ctx.sendMessage({
 				content: "Ok, estou desligando em 7 segundos !",

@@ -1,22 +1,29 @@
 import fs from "fs"
 import {
+	ApplicationCommandOption,
+	ApplicationCommandStructure,
 	Client,
 	ClientOptions
 } from "eris"
-import { Command } from "../typings/index"
+import { Command, Utils } from "../typings/index"
 import botDB from "../models/botDB"
 import guildDB from "../models/guildDB"
 import cmds from "../models/cmds"
-
+import users from "../models/userDB"
 import Embed from "./Embed"
+import levDistance from "../utils/levenshteinDistance"
+import levenshteinDistance from "../utils/levenshteinDistance"
+
 
 export default class DaniClient extends Client {
-	commands: Array<Command>
+	commands: Array<Command>;
 	db: {
 		bot: typeof botDB;
 		guild: typeof guildDB;
-		cmds: typeof cmds
+		cmds: typeof cmds;
+		users: typeof users;
 	}
+	utils: Utils
 	embed: typeof Embed
 	constructor() {
 
@@ -35,7 +42,11 @@ export default class DaniClient extends Client {
 		this.db = {
 			bot: botDB,
 			guild: guildDB,
-			cmds: cmds
+			cmds: cmds,
+			users: users
+		}
+		this.utils = {
+			levDistance: levenshteinDistance
 		}
 		this.embed = Embed
 	}
@@ -53,6 +64,19 @@ export default class DaniClient extends Client {
 
 
 			})
+
+		})
+		this.commands.forEach(async cmd => {
+			//			const listOfSlashCommands = await this.getCommands()
+			//		console.log(listOfSlashCommands)
+
+
+		this.createCommand({
+				name: cmd.name,
+				description: cmd.description,
+				options: cmd.options as ApplicationCommandOption[],
+				type: 1
+			}); //Create a user context menu
 
 		})
 	}

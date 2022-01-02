@@ -9,6 +9,7 @@ export default class erisdocsapi extends Command {
 			description: "Vê as docs do eris",
 			category: "Util",
 			aliases: ["erisdocs", "eris", "docseris"],
+			options: []
 
 		})
 	}

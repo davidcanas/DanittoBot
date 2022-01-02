@@ -5,9 +5,7 @@ import {
 	ComponentInteraction
 } from "eris"
 import CommandContext from "../structures/CommandContext"
-import {
-	createContext
-} from "vm"
+
 
 
 

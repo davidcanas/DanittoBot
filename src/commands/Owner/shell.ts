@@ -15,6 +15,7 @@ export default class Eval extends Command {
 			description: "Executa algo",
 			category: "Owner",
 			aliases: ["execute"],
+			options: []
 
 		})
 	}

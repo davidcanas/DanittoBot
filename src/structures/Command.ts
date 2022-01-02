@@ -8,13 +8,15 @@ export default class Command implements CommandSettings {
 	name: string
 	aliases?: Array<string>
 	category: "Owner" | "Util" | "Info" | "Fun"
+	options: Array<Object>
 
 	constructor(client: Client, options: CommandSettings) {
 		this.client = client
 		this.name = options.name
-		this.description = options.description
+		this.description = options.description || "Sem descrição de momento"
 		this.aliases = options.aliases
 		this.category = options.category
+		this.options = options.options
 
 	}
 }

@@ -13,6 +13,7 @@ export default class ready {
 
 	async run() {
 		console.log(`O ${yellow("client")} foi conectado com ${green("sucesso")}`)
+	
 		const activities = [
 			"Utilize d/help para obter ajuda ",
 			`Estou em ${this.client.guilds.size} servidores!`,
@@ -28,5 +29,7 @@ export default class ready {
 			})
 
 		}, 15000)
+	
 	}
+
 }

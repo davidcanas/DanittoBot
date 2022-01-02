@@ -7,13 +7,17 @@ interface CommandSettings {
     aliases?: Array<string>;
     usage?: string;
     category: "Owner" | "Util" | "Info" | "Fun";
+    options: Array<Object>
 
 }
 
 interface Command extends CommandSettings {
     execute: (ctx) => void;
 }
-
+interface Utils {
+    levDistance: (src: string, target: string) => number;
+  
+  }
 interface InteractionOptions {
     name: string;
     value: string;

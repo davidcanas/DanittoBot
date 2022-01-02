@@ -30,7 +30,7 @@ export default class InteractionCreate {
 				guildID: message.guildID
 			})
 		}
-		const prefix = gRes?.Settings.prefix || "d/"
+		const prefix = "d/"
 		if (message.content.startsWith(`<@${this.client.user.id}>`) || message.content.startsWith(`<@!${this.client.user.id}>`)) {
 			const embed1 = new this.client.embed()
 				.setTitle("Olá " + message.author.username + "#" + message.author.discriminator)
@@ -52,9 +52,28 @@ export default class InteractionCreate {
 
 		const command = this.client.commands.find(c => c.name === cmd || c.aliases?.includes(cmd))
 
+		if (!command) {
+			let cmds: string[] = [];
+			this.client.commands.forEach(cmd => {
+				cmds.push(cmd.name);
+				if (cmd.aliases) cmds = cmds.concat(cmd.aliases);
+			});
+			let diduMean = '';
+			let levDistanceLevel = Infinity;
 
-		const ctx = new CommandContext(this.client, message, args)
+			cmds.forEach(cmd1 => {
+				const levDistance = this.client.utils.levDistance(cmd, cmd1);
+
+				if (levDistance < levDistanceLevel) {
+					diduMean = cmd1;
+					levDistanceLevel = levDistance;
+				}
+			});
+			message.channel.createMessage(`Eu não encontrei o comando ${cmd}, querias dizer ${diduMean}?`)
+		}
 		if (command) {
+
+			const ctx = new CommandContext(this.client, message, args)
 			if (message.author.id !== "733963304610824252") {
 				const verifmanu = await this.client.db.bot.findOne({
 					botID: this.client.user.id
